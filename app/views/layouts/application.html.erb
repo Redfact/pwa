@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pwa</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <div class="sticky-top container-fluid bg-light ">
+      <div class="row  py-3 justify-content-between">
+        <div class="col-1 m-3 ">
+            <%= link_to root_path do %>
+            <%= image_tag "user.svg",width:"50" ,height:"40",alt:"Rea Brand"%>
+            <% end %>
+        </div>      
+        <div class="col-1">
+          <%= link_to root_path do %>
+          <%= image_tag "logo.png" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+          <% end %>
+        </div>
+        <div class="col-1 m-3">
+          <%= link_to root_path do %>
+          <%= image_tag "star.svg" ,width:"50" ,height:"50",alt:"Rea Brand"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <footer>
+    <div class="fixed-bottom container-fluid bg-second">
+      <div class="row  py-3 justify-content-between">
+        <div class="col-1 m-3 ">
+            <%= link_to root_path do %>
+            <%= image_tag "home.svg",width:"50" ,height:"40",alt:"Rea Brand"%>
+            <% end %>
+        </div>      
+        <div class="col-1">
+          <%= link_to root_path do %>
+          <%= image_tag "search.svg" ,width:"60" ,height:"60",alt:"Rea Brand"%>
+          <% end %>
+        </div>
+        <div class="col-1 m-3">
+          <%= link_to root_path do %>
+          <%= image_tag "mail.svg" ,width:"50" ,height:"50",alt:"Rea Brand"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</html>
