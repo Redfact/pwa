@@ -64,3 +64,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.5.0'
 
 gem 'jquery-rails'
+
+gem 'devise'
+
+gem 'colorize'
+
+gem 'table_print'
+
+gem 'administrate'
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+
+gem 'imgurapi' , :git => 'https://github.com/tamvm/imgur'
+
+gem 'link_thumbnailer'

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lieu: MyString
+  capacite: 1
+  loyer_total: 1
+  loyer_partiel: 1
+  description: MyText
+  contrat_partiel: false
+
+two:
+  lieu: MyString
+  capacite: 1
+  loyer_total: 1
+  loyer_partiel: 1
+  description: MyText
+  contrat_partiel: false

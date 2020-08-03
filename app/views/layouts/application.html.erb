@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pwa</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <div class="sticky-top container-fluid bg-light ">
-      <div class="row  py-3 justify-content-around">
-        <div class="col-1 m-1 ">
-            <%= link_to root_path do %>
-            <%= image_tag "user.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
-            <% end %>
-        </div>      
-        <div class="col-1">
-          <%= link_to root_path do %>
-          <%= image_tag "logo.png" ,width:"75" ,height:"75",alt:"Rea Brand"%>
-          <% end %>
-        </div>
-        <div class="col-1 m-1">
-          <%= link_to root_path do %>
-          <%= image_tag "star.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
-          <% end %>
-        </div>
+<head>
+  <title>Pwa</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <div class="sticky-top container-fluid bg-light ">
+    <div class="row  py-3 justify-content-around">
+      <div class="col-1 m-1 ">
+        <%= link_to root_path do %>
+        <%= image_tag "user.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
+      </div>
+      <div class="col-1">
+        <%= link_to root_path do %>
+        <%= image_tag "logo.png" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
+      </div>
+      <div class="col-1 m-1">
+        <%= link_to root_path do %>
+        <%= image_tag "star.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
       </div>
     </div>
+  </div>
 
-    
 
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
-  <footer>
-    <div class="fixed-bottom container-fluid bg-light">
-      <div class="row  py-3 justify-content-around">
-        <div class="col-1 m-1 ">
-            <%= link_to root_path do %>
-            <%= image_tag "home.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
-            <% end %>
-        </div>      
-        <div class="col-1 m-1">
-          <%= link_to root_path do %>
-          <%= image_tag "search.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
-          <% end %>
-        </div>
-        <div class="col-1 m-1">
-          <%= link_to root_path do %>
-          <%= image_tag "mail.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
-          <% end %>
-        </div>
+</head>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
+<body>
+  <%= yield %>
+</body>
+<footer>
+  <div class="fixed-bottom container-fluid bg-light">
+    <div class="row  py-3 justify-content-around">
+      <div class="col-1 m-1 ">
+        <%= link_to root_path do %>
+        <%= image_tag "home.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
+      </div>
+      <div class="col-1 m-1">
+        <%= link_to root_path do %>
+        <%= image_tag "search.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
+      </div>
+      <div class="col-1 m-1">
+        <%= link_to root_path do %>
+        <%= image_tag "mail.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <% end %>
       </div>
     </div>
-  </footer>
-  
+  </div>
+
+</footer>
+
 </html>
