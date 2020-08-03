@@ -8,10 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <div class="sticky-top container-fluid bg-light ">
-      <div class="row  py-3 justify-content-between">
-        <div class="col-1 m-3 ">
+      <div class="row  py-3 justify-content-around">
+        <div class="col-1 m-1 ">
             <%= link_to root_path do %>
-            <%= image_tag "user.svg",width:"50" ,height:"40",alt:"Rea Brand"%>
+            <%= image_tag "user.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
             <% end %>
         </div>      
         <div class="col-1">
@@ -19,9 +19,9 @@
           <%= image_tag "logo.png" ,width:"75" ,height:"75",alt:"Rea Brand"%>
           <% end %>
         </div>
-        <div class="col-1 m-3">
+        <div class="col-1 m-1">
           <%= link_to root_path do %>
-          <%= image_tag "star.svg" ,width:"50" ,height:"50",alt:"Rea Brand"%>
+          <%= image_tag "star.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
           <% end %>
         </div>
       </div>
@@ -35,21 +35,21 @@
     <%= yield %>
   </body>
   <footer>
-    <div class="fixed-bottom container-fluid bg-second">
-      <div class="row  py-3 justify-content-between">
-        <div class="col-1 m-3 ">
+    <div class="fixed-bottom container-fluid bg-light">
+      <div class="row  py-3 justify-content-around">
+        <div class="col-1 m-1 ">
             <%= link_to root_path do %>
-            <%= image_tag "home.svg",width:"50" ,height:"40",alt:"Rea Brand"%>
+            <%= image_tag "home.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
             <% end %>
         </div>      
-        <div class="col-1">
+        <div class="col-1 m-1">
           <%= link_to root_path do %>
-          <%= image_tag "search.svg" ,width:"60" ,height:"60",alt:"Rea Brand"%>
+          <%= image_tag "search.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
           <% end %>
         </div>
-        <div class="col-1 m-3">
+        <div class="col-1 m-1">
           <%= link_to root_path do %>
-          <%= image_tag "mail.svg" ,width:"50" ,height:"50",alt:"Rea Brand"%>
+          <%= image_tag "mail.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
           <% end %>
         </div>
       </div>
