@@ -1,5 +1,5 @@
 require 'colorize'
-require 'upload'
+# require 'upload'
 include ActionView::Helpers::NumberHelper
 
 class AnnoncesController < ApplicationController
