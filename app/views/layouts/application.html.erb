@@ -5,62 +5,65 @@
   <title>Pwa</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   <div class="fixed-top container-fluid bg-light ">
-    <div class="row  py-3 justify-content-around">
+    <div class="row  py-1 justify-content-around">
       <div class="col-1 m-1 ">
         <%= link_to root_path do %>
-        <%= image_tag "user.svg",width:"65" ,height:"65",alt:"Rea Brand"%>
+        <%= image_tag "user.svg",width:"25" ,height:"25",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1">
         <%= link_to root_path do %>
-        <%= image_tag "logo.png" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "logo.png" ,width:"30" ,height:"30",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1 m-1">
         <%= link_to root_path do %>
-        <%= image_tag "star.svg" ,width:"65" ,height:"65",alt:"Rea Brand"%>
+        <%= image_tag "star.svg" ,width:"25" ,height:"25",alt:"Rea Brand"%>
         <% end %>
       </div>
     </div>
   </div>
+
+
+
 </head>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+<h5 class="notice text-white text-center bg-success m-1 border-0 rounded"><%= notice %></h5>
+<% else %>
+<h5 class="notice text-white text-center bg-warning m-1 border-0 rounded"><%= alert %></h5>
+<% end %>
 
-
-<body>
+<body class="bg-rea mbody">
   <%= yield %>
 </body>
 
-<footer class="">
-  <div class="fixed-bottom container-fluid bg-light">
-    <div class="row  py-3 justify-content-around">
+<footer>
+  <div class="fixed-bottom container bg-light">
+    <div class="row  py-1 justify-content-around">
       <div class="col-1 m-1 ">
         <%= link_to root_path do %>
-        <%= image_tag "home.svg",width:"65" ,height:"65",alt:"Rea Brand"%>
+        <%= image_tag "home.svg",width:"25" ,height:"25",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1 m-1">
         <%= link_to root_path do %>
-        <%= image_tag "search.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "search.svg" ,width:"30" ,height:"30",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1 m-1">
         <%= link_to root_path do %>
-        <%= image_tag "mail.svg" ,width:"65" ,height:"65",alt:"Rea Brand"%>
+        <%= image_tag "mail.svg" ,width:"25" ,height:"25",alt:"Rea Brand"%>
         <% end %>
       </div>
     </div>
   </div>
-
 </footer>
 
 </html>

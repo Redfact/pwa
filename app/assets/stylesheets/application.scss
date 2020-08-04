@@ -1,5 +1,9 @@
  @import "bootstrap";
 
+ :root{
+     --navheight: 35px;
+ }
+
  .text-rea{
     color:#00404f;
 }
@@ -17,8 +21,10 @@
     object-fit: cover;
 }
 
-.row{
-    width: 100%;
+.mbody{
+    margin-top: var(--navheight);
+    margin-bottom: var(--navheight);
 }
+
 
 
