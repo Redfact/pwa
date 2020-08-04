@@ -6,13 +6,16 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <div class="sticky-top container-fluid bg-light ">
+
+
+  <div class="fixed-top container-fluid bg-light ">
     <div class="row  py-3 justify-content-around">
       <div class="col-1 m-1 ">
         <%= link_to root_path do %>
-        <%= image_tag "user.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "user.svg",width:"65" ,height:"65",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1">
@@ -22,15 +25,13 @@
       </div>
       <div class="col-1 m-1">
         <%= link_to root_path do %>
-        <%= image_tag "star.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "star.svg" ,width:"65" ,height:"65",alt:"Rea Brand"%>
         <% end %>
       </div>
     </div>
   </div>
-
-
-
 </head>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
@@ -38,12 +39,13 @@
 <body>
   <%= yield %>
 </body>
-<footer>
+
+<footer class="">
   <div class="fixed-bottom container-fluid bg-light">
     <div class="row  py-3 justify-content-around">
       <div class="col-1 m-1 ">
         <%= link_to root_path do %>
-        <%= image_tag "home.svg",width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "home.svg",width:"65" ,height:"65",alt:"Rea Brand"%>
         <% end %>
       </div>
       <div class="col-1 m-1">
@@ -53,7 +55,7 @@
       </div>
       <div class="col-1 m-1">
         <%= link_to root_path do %>
-        <%= image_tag "mail.svg" ,width:"75" ,height:"75",alt:"Rea Brand"%>
+        <%= image_tag "mail.svg" ,width:"65" ,height:"65",alt:"Rea Brand"%>
         <% end %>
       </div>
     </div>

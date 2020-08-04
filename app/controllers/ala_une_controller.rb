@@ -1,4 +1,5 @@
 class AlaUneController < ApplicationController
-  def show
+  def show 
+    @AlaUne = Annonce.AlaUne
   end
 end
