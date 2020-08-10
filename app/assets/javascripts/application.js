@@ -20,7 +20,7 @@
 //= require_tree .
 
 
-window.addEventListener('load', function() => {
+window.addEventListener('load', function(){
     navigator.serviceWorker.register('/service-worker.js').then(registration => {
       console.log('ServiceWorker registered: ', registration);
         
@@ -36,14 +36,13 @@ window.addEventListener('load', function() => {
         serviceWorker = registration.active;
         console.log('Service worker active.');
       }
-    window.Notification.requestPermission().then(permission => {    
-        if(permission !== 'granted'){
-          throw new Error('Permission not granted for Notification');
-        }
-    }); 
+      window.Notification.requestPermission().then(permission => {    
+          if(permission !== 'granted'){
+            throw new Error('Permission not granted for Notification');
+          }
+      }); 
     
     }).catch(registrationError => {
       console.log('Service worker registration failed: ', registrationError);
     });
-    
   });
