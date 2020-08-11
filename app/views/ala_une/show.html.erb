@@ -10,7 +10,7 @@
 </div>
 <% end %>
 
-<h4><span class="badge  m-1 bg-rea text-light">A la une</span></h4>
+<h4><span class="badge  m-1 mt-2 bg-rea text-light">A la une</span></h4>
 
 <div class="container">
     <%if @AlaUne==nil || @AlaUne.empty? then %>
@@ -22,7 +22,7 @@
     <%else%>
 
     <%@AlaUne.each{ |an|%>
-        <div class="row mt-3 bg-second border rounded border-secondary">
+        <div class="row mt-3 mx-0 bg-light border border-light rounded">
             <% if !an.photos.empty? %>
             <img class="card-img-top rounded image" src=<%=an.photos.first.url%> alt="Card image cap">
             <% else %>
