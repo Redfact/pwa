@@ -50,7 +50,8 @@
                         <%=an.description%>
                 </p>
                 <p class="card-subtitle mb-2 text-muted">
-                    Postée le <%=an.created_at.to_date%>
+                    <%d=an.created_at.to_date%>
+                    Postée le <%=d.strftime(' %d %b %Y')%>
                 </p>
             </div>
         </div>
