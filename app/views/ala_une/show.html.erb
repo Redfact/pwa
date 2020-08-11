@@ -32,9 +32,9 @@
                 <h4><%=link_to "#{an.typeBien} à #{an.lieu}" , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %>
                 </h4>
                 <% if an.Vente? %>
-                <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+                <p class="card-subtitle mb-2 text-success font-weight-bold">À vendre</p>
                 <% else %>
-                <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+                <p class="card-subtitle mb-2 text-info font-weight-bold">À louer</p>
                 <% end %>
                 <p class="card-subtitle mb-2 text-primary ">
                     <%=number_to_currency(an.loyer_total, unit: an.devise.to_s, separator: ",", delimiter: ".", format: "%n %u",precision:0)%>
