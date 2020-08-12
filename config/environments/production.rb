@@ -61,8 +61,18 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "pwa_#{Rails.env}"
+  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+    config.action_controller.perform_caching = true
 
-  config.action_mailer.perform_caching = false
+    config.cache_store = :memory_store
+    config.public_file_server.headers = {
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+    }
+  else
+    config.action_controller.perform_caching = false
+
+    config.cache_store = :null_store
+  end
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
