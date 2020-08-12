@@ -45,3 +45,5 @@ window.addEventListener('load', function(){
       console.log('Service worker registration failed: ', registrationError);
     });
   });
+
+  
