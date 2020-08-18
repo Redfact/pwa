@@ -1,6 +1,21 @@
 var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_VERSION + ':sw-cache-';
-console
+console.log("Running service worker erb")
+
+function urlB64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
+
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (var i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
 
 function onInstall(event) {
   console.log('[Serviceworker]', "Installing!", event);
@@ -30,6 +45,7 @@ function onActivate(event) {
       );
     })
   );
+
 }
 
 // Borrowed from https://github.com/TalAter/UpUp
@@ -53,6 +69,62 @@ function onFetch(event) {
   );
 }
 
+function onPush(event) {
+  console.log('[Serviceworker]', "Pushing!", event);
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'Noticification ReaImmo';
+  const options = {
+    body: event.data.text(),
+    icon: 'images/logo.png',
+    badge: 'images/logo.png'
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+}
+
 self.addEventListener('install', onInstall);
-self.addEventListener('activate', onActivate);
+
+self.addEventListener('activate', async function(event) {
+  console.log('[Serviceworker]', "Activating!", event);
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+          return cacheName.indexOf(CACHE_VERSION) !== 0;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+  try {
+    const applicationServerKey = urlB64ToUint8Array("BL4TDcrb3digNqMDfAZBfDXw03m9zsy2JFTviPrsei1y3rz22-XxwNlcoOTqdfJXOv_kD4qzM3fw7Ux_HDiCAIU=")
+    const options = { applicationServerKey, userVisibleOnly: true }
+    const subscription = await self.registration.pushManager.subscribe(options)
+    console.log(JSON.stringify(subscription))
+  } catch (err) {
+    console.log('Error', err)
+  }
+});
+
+
 self.addEventListener('fetch', onFetch);
+
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'Notification Rea';
+  const options = {
+    body: event.data.text(),
+    icon: 'images/logo.png',
+    badge: 'images/logo.png'
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});

@@ -82,3 +82,5 @@ gem 'imgurapi' , :git => 'https://github.com/tamvm/imgur'
 gem 'link_thumbnailer'
 
 gem 'figaro'
+
+gem 'webpush'
